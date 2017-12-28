@@ -6,7 +6,7 @@
 
 \newcommand{\denselist}{\itemsep 0pt\partopsep 0pt}
 \usepackage{tipa}
-\usepackage[]{natbib}
+\usepackage[square,sort,comma,numbers]{natbib}
 \usepackage{graphicx}
 \graphicspath{{images/}}
 \usepackage[font={scriptsize,it}]{caption}
@@ -190,12 +190,29 @@
 		\end{frame}
 	
 		\begin{frame}
-			\frametitle{Examples of Image Recognition}
-			
+			\frametitle{Image recognition and neural networks}
+			\begin{figure}
+				\includegraphics[width=\textwidth]{images/fig_category_hierarch_dist_reps.png}
+				\caption{Visual network representation. \textit{Image from \href{https://grey.colorado.edu/CompCogNeuro/index.php/CCNBook/Networks}{grey.colorado.edu}} \cite{ccn_path}}
+			\end{figure}
 		\end{frame}
-	
+
 		\begin{frame}
-			\frametitle{Convolutional Neural Network}
+			\frametitle{Convolutional neural network}
+			\begin{figure}
+				\includegraphics[width=\textwidth]{images/cnn2.jpg}
+				\centering
+				\caption{CNN representation. \textit{Image from \href{https://blog.floydhub.com/building-your-first-convnet/}{blog.floydhub.com/building-your-first-convnet}} \cite{first_cnn}}
+			\end{figure}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{CNN visualized}
+			\begin{figure}
+				\includegraphics[width=\textwidth]{images/cnn_visual.png}
+				\centering
+				\caption{CNN visualized. \textit{Image from \href{http://scs.ryerson.ca/~aharley/vis/conv/}{scs.ryerson.ca/}} \cite{harley2015isvc}}
+			\end{figure}
 			
 		\end{frame}
 	
@@ -237,28 +254,53 @@
 		
 		\begin{frame}
 			\frametitle{Generative Models}
-			
+			\begin{center}
+				\includegraphics[scale=.3]{images/captionbot.jpg}
+			\end{center}
+			\begin{block}{Caption Bot \cite{fang2015captions}}
+				\href{https://www.captionbot.ai/}{captionbot.ai} was used throughout this paper to automatically generate captions. It is a Microsoft project based on the \href{https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/}{Computer Vision API}, \href{https://azure.microsoft.com/en-us/services/cognitive-services/emotion/}{Emotion API}, and \href{https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/}{Bing Image Search API}.
+			\end{block}
+		\end{frame}
+	
+		\begin{frame}
+			\frametitle{Caption Bot example}
+			\begin{center}
+				\includegraphics[width=\textwidth]{images/caption_detmar.png}
+			\end{center}
+		\end{frame}
+	
+		\begin{frame}
+			\frametitle{Computer Vision API example}
+			\begin{center}
+				\includegraphics[width=\textwidth]{images/detmar_api.png}
+			\end{center}
+			\begin{itemize}
+				\footnotesize{
+					\item Description	{ "tags": [ "person", "man", "indoor", "table", "sitting", "holding", "food", "woman", "glasses", "people", "posing", "drinking", "wine", "restaurant", "plate", "smiling", "pizza", "phone", "young", "standing", "store", "group", "white" ], "captions": [ { "text": "a man sitting at a table in a restaurant", "confidence": 0.9105153 } ] }
+					\item Faces	[ { "age": 25, "gender": "Male", "faceRectangle": { "top": 94, "left": 149, "width": 79, "height": 79 } }, { "age": 33, "gender": "Male", "faceRectangle": { "top": 97, "left": 343, "width": 79, "height": 79 } } ]
+				}
+			\end{itemize}
 		\end{frame}
 	
 		%TODO Generative models melm, lstm, grnn - RYAN
-		\subsection{Melm}
+		\subsection{Maximum Entropy Language Model}
 			
 			\begin{frame}
-				\frametitle{Melm}
+				\frametitle{MELM}
 				
 			\end{frame}
 		
 		\subsection{Long Short-Term Memory}
 			
 			\begin{frame}
-				\frametitle{Long Short-Term Memory}
+				\frametitle{LSTM}
 				
 			\end{frame}
 		
 		\subsection{Gated Recurrent Neural Network}
 			
 			\begin{frame}
-				\frametitle{Gated Recurrent Neural Network}
+				\frametitle{GRNN}
 				
 			\end{frame}
 	
@@ -317,7 +359,7 @@
 		\begin{frame}[allowframebreaks]
 			\frametitle{References}
 			\begin{footnotesize}
-				\bibliographystyle{apalike}
+				\bibliographystyle{IEEE}
 				\bibliography{BibMaster.bib}
 			\end{footnotesize}
 		\end{frame}

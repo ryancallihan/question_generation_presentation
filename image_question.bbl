@@ -1,0 +1,54 @@
+\begin{thebibliography}{}
+
+\bibitem[Denkowski and Lavie, 2014]{denkowski:lavie:meteor-wmt:2014}
+Denkowski, M. and Lavie, A. (2014).
+\newblock Meteor universal: Language specific translation evaluation for any
+  target language.
+\newblock In {\em Proceedings of the EACL 2014 Workshop on Statistical Machine
+  Translation}.
+
+\bibitem[Fang et~al., 2015]{fang2015captions}
+Fang, H., Gupta, S., Iandola, F., Srivastava, R.~K., Deng, L., Doll{\'a}r, P.,
+  Gao, J., He, X., Mitchell, M., Platt, J.~C., et~al. (2015).
+\newblock From captions to visual concepts and back.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 1473--1482.
+
+\bibitem[Galley et~al., 2015]{DBLP:journals/corr/GalleyBSJAQMGD15}
+Galley, M., Brockett, C., Sordoni, A., Ji, Y., Auli, M., Quirk, C., Mitchell,
+  M., Gao, J., and Dolan, B. (2015).
+\newblock deltableu: {A} discriminative metric for generation tasks with
+  intrinsically diverse targets.
+\newblock {\em CoRR}, abs/1506.06863.
+
+\bibitem[Harley, 2015]{harley2015isvc}
+Harley, A.~W. (2015).
+\newblock An interactive node-link visualization of convolutional neural
+  networks.
+\newblock In {\em ISVC}, pages 867--877.
+
+\bibitem[Mostafazadeh et~al., 2016]{mostafazadeh-EtAl:2016:P16-1}
+Mostafazadeh, N., Misra, I., Devlin, J., Mitchell, M., He, X., and Vanderwende,
+  L. (2016).
+\newblock Generating natural questions about an image.
+\newblock In {\em Proceedings of the 54th Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 1802--1813, Berlin,
+  Germany. Association for Computational Linguistics.
+
+\bibitem[O'Reilly et~al., 2012]{ccn_path}
+O'Reilly, R.~C., Munakata, Y., Frank, M., Hazy, T., et~al. (2012).
+\newblock {\em Computational cognitive neuroscience}.
+\newblock PediaPress.
+
+\bibitem[Papineni et~al., 2002]{papineni2002bleu}
+Papineni, K., Roukos, S., Ward, T., and Zhu, W.-J. (2002).
+\newblock Bleu: a method for automatic evaluation of machine translation.
+\newblock In {\em Proceedings of the 40th annual meeting on association for
+  computational linguistics}, pages 311--318. Association for Computational
+  Linguistics.
+
+\bibitem[Wadhwa, 2017]{first_cnn}
+Wadhwa, S. (2017).
+\newblock Building your first convnet.
+
+\end{thebibliography}

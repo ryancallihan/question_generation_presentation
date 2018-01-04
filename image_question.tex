@@ -6,8 +6,9 @@
 
 \newcommand{\denselist}{\itemsep 0pt\partopsep 0pt}
 \usepackage{tipa}
-\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[square,sort,numbers]{natbib}
 \usepackage{graphicx}
+\usepackage{booktabs}
 \graphicspath{{images/}}
 \usepackage[font={scriptsize,it}]{caption}
 
@@ -217,8 +218,33 @@
 		\end{frame}
 	
 		\begin{frame}
-			\frametitle{Why Does It Work Well for Images?}
-			
+			\frametitle{Generative Models}
+			\begin{center}
+				\includegraphics[scale=.3]{images/captionbot.jpg}
+			\end{center}
+			\begin{block}{Caption Bot \cite{fang2015captions}}
+				\href{https://www.captionbot.ai/}{captionbot.ai} was used throughout this paper to automatically generate captions. It is a Microsoft project based on the \href{https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/}{Computer Vision API}, \href{https://azure.microsoft.com/en-us/services/cognitive-services/emotion/}{Emotion API}, and \href{https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/}{Bing Image Search API}.
+			\end{block}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Caption Bot example}
+			\begin{center}
+				\includegraphics[width=\textwidth]{images/caption_detmar.png}
+			\end{center}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Computer Vision API example}
+			\begin{center}
+				\includegraphics[width=\textwidth]{images/detmar_api.png}
+			\end{center}
+			\begin{itemize}
+				\footnotesize{
+					\item Description	{ "tags": [ "person", "man", "indoor", "table", "sitting", "holding", "food", "woman", "glasses", "people", "posing", "drinking", "wine", "restaurant", "plate", "smiling", "pizza", "phone", "young", "standing", "store", "group", "white" ], "captions": [ { "text": "a man sitting at a table in a restaurant", "confidence": 0.9105153 } ] }
+					\item Faces	[ { "age": 25, "gender": "Male", "faceRectangle": { "top": 94, "left": 149, "width": 79, "height": 79 } }, { "age": 33, "gender": "Male", "faceRectangle": { "top": 97, "left": 343, "width": 79, "height": 79 } } ]
+				}
+			\end{itemize}
 		\end{frame}
 	
 	%TODO Talk about datasets and give examples and information about them. Mturk etc - SARAH
@@ -253,55 +279,63 @@
 	\section{Generative Models}
 		
 		\begin{frame}
-			\frametitle{Generative Models}
+			\frametitle{Generative models}
+			Three generative models were used in this study
+			\begin{itemize}
+				\item Maximum entropy language model (MELM)
+				\item RNN with long short-term memory cells (LSTM)
+				\item RNN with gated recurrent units (GRU)
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Model input}
 			\begin{center}
 				\includegraphics[scale=.3]{images/captionbot.jpg}
 			\end{center}
-			\begin{block}{Caption Bot \cite{fang2015captions}}
-				\href{https://www.captionbot.ai/}{captionbot.ai} was used throughout this paper to automatically generate captions. It is a Microsoft project based on the \href{https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/}{Computer Vision API}, \href{https://azure.microsoft.com/en-us/services/cognitive-services/emotion/}{Emotion API}, and \href{https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/}{Bing Image Search API}.
-			\end{block}
+			The last fully connected layer of the image recognition CNN was used as input\\
+			\bigskip
+			It was a 4096-dimentional vector
 		\end{frame}
-	
-		\begin{frame}
-			\frametitle{Caption Bot example}
-			\begin{center}
-				\includegraphics[width=\textwidth]{images/caption_detmar.png}
-			\end{center}
-		\end{frame}
-	
-		\begin{frame}
-			\frametitle{Computer Vision API example}
-			\begin{center}
-				\includegraphics[width=\textwidth]{images/detmar_api.png}
-			\end{center}
-			\begin{itemize}
-				\footnotesize{
-					\item Description	{ "tags": [ "person", "man", "indoor", "table", "sitting", "holding", "food", "woman", "glasses", "people", "posing", "drinking", "wine", "restaurant", "plate", "smiling", "pizza", "phone", "young", "standing", "store", "group", "white" ], "captions": [ { "text": "a man sitting at a table in a restaurant", "confidence": 0.9105153 } ] }
-					\item Faces	[ { "age": 25, "gender": "Male", "faceRectangle": { "top": 94, "left": 149, "width": 79, "height": 79 } }, { "age": 33, "gender": "Male", "faceRectangle": { "top": 97, "left": 343, "width": 79, "height": 79 } } ]
-				}
-			\end{itemize}
-		\end{frame}
-	
 		%TODO Generative models melm, lstm, grnn - RYAN
 		\subsection{Maximum Entropy Language Model}
 			
 			\begin{frame}
-				\frametitle{MELM}
-				
+				\frametitle{Maximum Entropy Language Model}
+				\begin{itemize}
+					\item<1-> Generated word probabilities using a CNN
+					\item<2-> MELM using candidate word probabilities
+					\item<3-> Relevant questions but some grammatical errors. Warrents futher research
+				\end{itemize}
 			\end{frame}
 		
 		\subsection{Long Short-Term Memory}
 			
 			\begin{frame}
-				\frametitle{LSTM}
-				
+				\frametitle{RNN with Long Short-Term Memory}
+				\begin{itemize}
+					\item<1-> Given a caption, model generates a question
+					\item<2-> Used gold standard caption-question dataset for training
+					\item<3-> Consists of 2 RNNs
+						\begin{itemize}
+							\item An encoder which processes the caption
+							\item A decoder which generates the question
+						\end{itemize}
+					\item<4-> Output was incoherent
+				\end{itemize}
 			\end{frame}
 		
 		\subsection{Gated Recurrent Neural Network}
 			
 			\begin{frame}
-				\frametitle{GRNN}
-				
+				\frametitle{Gated Recurrent Neural Network}
+				\begin{itemize}
+					\item<1-> Uses final fully connected layer from the image recognition CNN (Captionbot I assume) into a 500-dimentional vector
+					\item<2-> Generates a single token at a time until the end of sentence token (aka "?")
+					\item<3-> "Where is this?" Is the top generated question for 29.3\% of the images. More interesting and meaningful quesions generally ranked lower
+					\item<5-> They added a constraint that which rejects questions with less that 6 tokens
+				\end{itemize}
+				Code based on this model can be found here: \href{https://github.com/JamesChuanggg/VQG-tensorflow}{github.com/JamesChuanggg/VQG-tensorflow}
 			\end{frame}
 	
 	%TODO Retrieval models knn with closest semantic question - SARAH
@@ -318,25 +352,63 @@
 				\frametitle{K-Nearest Neighbor}
 				
 			\end{frame}
-			
-			\begin{frame}
-				\frametitle{BLEU}
-				
-			\end{frame}
 	
 	%TODO Evaluation. Pick out interesting stuff and examples of output - :(
 	\section{Evaluation}
 		
 		\begin{frame}
-			\frametitle{Evaluation}
-			
+			\frametitle{Evaluation} 
+			Two methods of evaluation were used
+			\begin{itemize}
+				\item<1-> Human evaluation using AMT on a 3 point scale
+				\item<2-> Automatic evaluation
+					\begin{itemize}
+						\item BLEU \cite{papineni2002bleu}
+						\item $\Delta BLEU$ \cite{DBLP:journals/corr/GalleyBSJAQMGD15}
+						\item METEOR \cite{denkowski:lavie:meteor-wmt:2014}
+					\end{itemize}
+			\end{itemize}
 		\end{frame}
 	
 		\begin{frame}
-			\frametitle{BLEU \& METEOR}
-			
+			\frametitle{Human Evaluation}
+			Using AMT, 3 people evaluated each question on a 3 point scale from 1 (worst) - 3 (best)
 		\end{frame}
 	
+		\begin{frame}
+			\frametitle{BLEU, $\Delta BLEU$, \& METEOR}
+			Similar concept to Levenshtein or Needleman-Wunsch Distance
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=.3]{images/alignment1.png}
+					\caption{\footnotesize{Taken from \href{http://www.cs.cmu.edu/~alavie/METEOR/examples.html}{cs.cmu.edu}}}
+				\end{figure}
+			\end{center}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Correlation between human and automatic metrics} 
+			\begin{tabular}{cccc} \toprule
+				& $METEOR$ & $BLEU$ & $\Delta BLEU$ \\ \midrule
+
+				$r$ & 0.916 (4.8e-27) & 0.915 (4.6e-27) & 0.915 (5.8e-27) \\ 
+
+				$\rho$ & 0.628 (1.5e-08) & 0.67 (7.0e-10) & 0.702 (5.0e-11) \\ 
+
+				$\tau$ & 0.476 (1.6e-08) & 0.51 (7.9e-10)  & 0.557 (3.5e-11) \\ \bottomrule
+
+			\end{tabular} 
+		\end{frame}
+	
+		\begin{frame}
+			\frametitle{Evaluation discussion}
+			With your group, take a look at the evaluation results table and:
+			\begin{itemize}
+				\item<1-> Decide which model and data set worked the best and which worked the worst?
+				\item<2-> Why do these differences exist?
+				
+			\end{itemize}
+		\end{frame}	
 	%TODO Discussion related things. Where it didnt work - BOTH
 	\section{Discussion}
 		
@@ -359,7 +431,7 @@
 		\begin{frame}[allowframebreaks]
 			\frametitle{References}
 			\begin{footnotesize}
-				\bibliographystyle{IEEE}
+				\bibliographystyle{apalike}
 				\bibliography{BibMaster.bib}
 			\end{footnotesize}
 		\end{frame}

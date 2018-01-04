@@ -1,17 +1,17 @@
 \beamer@sectionintoc {1}{Generating Questions from Pictures}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{The Authors' Objective}{10}{0}{1}
 \beamer@sectionintoc {2}{Image Recognition using a CNN}{11}{0}{2}
-\beamer@sectionintoc {3}{Datasets}{16}{0}{3}
-\beamer@subsectionintoc {3}{1}{MS COCO}{17}{0}{3}
-\beamer@subsectionintoc {3}{2}{Bing}{18}{0}{3}
-\beamer@subsectionintoc {3}{3}{Flicker}{19}{0}{3}
-\beamer@sectionintoc {4}{Generative Models}{20}{0}{4}
-\beamer@subsectionintoc {4}{1}{Maximum Entropy Language Model}{23}{0}{4}
-\beamer@subsectionintoc {4}{2}{Long Short-Term Memory}{24}{0}{4}
-\beamer@subsectionintoc {4}{3}{Gated Recurrent Neural Network}{25}{0}{4}
-\beamer@sectionintoc {5}{Retrieval Model}{26}{0}{5}
-\beamer@subsectionintoc {5}{1}{K-Nearest Neighbor}{27}{0}{5}
-\beamer@sectionintoc {6}{Evaluation}{29}{0}{6}
-\beamer@sectionintoc {7}{Discussion}{31}{0}{7}
-\beamer@subsectionintoc {7}{1}{Questions}{32}{0}{7}
-\beamer@sectionintoc {8}{References}{33}{0}{8}
+\beamer@sectionintoc {3}{Datasets}{18}{0}{3}
+\beamer@subsectionintoc {3}{1}{MS COCO}{19}{0}{3}
+\beamer@subsectionintoc {3}{2}{Bing}{20}{0}{3}
+\beamer@subsectionintoc {3}{3}{Flicker}{21}{0}{3}
+\beamer@sectionintoc {4}{Generative Models}{22}{0}{4}
+\beamer@subsectionintoc {4}{1}{Maximum Entropy Language Model}{24}{0}{4}
+\beamer@subsectionintoc {4}{2}{Long Short-Term Memory}{27}{0}{4}
+\beamer@subsectionintoc {4}{3}{Gated Recurrent Neural Network}{31}{0}{4}
+\beamer@sectionintoc {5}{Retrieval Model}{36}{0}{5}
+\beamer@subsectionintoc {5}{1}{K-Nearest Neighbor}{37}{0}{5}
+\beamer@sectionintoc {6}{Evaluation}{38}{0}{6}
+\beamer@sectionintoc {7}{Discussion}{45}{0}{7}
+\beamer@subsectionintoc {7}{1}{Questions}{46}{0}{7}
+\beamer@sectionintoc {8}{References}{47}{0}{8}
